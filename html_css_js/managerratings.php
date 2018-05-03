@@ -1,8 +1,11 @@
-<!DOCTYPE html>
+<?php 
+include 'login_test.php';
+?>
+
 <html>
 
 	<head>
-		<title>Ratings</title>
+		<title>Manager Ratings</title>
 		<link rel="stylesheet" href="stylesheet.css" type="text/css"/>
 		<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	</head>
@@ -18,10 +21,10 @@
 	</div>
 	<div class = "menuList">
 		<form action="" >
-		<a href="home.html" class = "menuButton" value = "rota">Rota</a>
-				<a href="requests.html" class = "menuButton" value = "request">Requests</a>
-				<a href="pref.html" class = "menuButton" value = "preference">Preferences</a>
-				<a href="ratings.html" class = "presentButton" value = "rating">Ratings</a>
+		<a href="managerhome.php" class = "menuButton" value = "rota">Rota</a>
+				<a href="managerrequests.php" class = "menuButton" value = "request">Requests</a>
+				<a href="managerpref.php" class = "menuButton" value = "preference">Preferences</a>
+				<a href="managerratings.php" class = "presentButton" value = "rating">Ratings</a>
 			<br><br>
 		</form>
 	</div>
@@ -104,11 +107,12 @@
 				</form>
 		</div>
 	</div>
-		<form>
-			<button class="logOutButton" value="Log Out">Log Out</button>
-			<br>
-		</form>	
 	</div>
+			    <form>
+	        <br>
+            <button id="logOut" class="logOutButton" value="Log Out">Log Out</button>
+            <br>
+        </form>
 	<div class = "tableRow4">
 		<div class = "tableEnd">
 			<h5>SMARTROTA</h5>

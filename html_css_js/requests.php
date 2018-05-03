@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<?php 
+include 'login_test.php';
+?>
+
 <html>
 	<head>
 		<title>Requests Page</title>
@@ -17,9 +20,9 @@
 		<div class = "menuList">
 			<form action="" >
 			<a href="home.php" class = "menuButton" value = "rota">Rota</a>
-				<a href="requests.html" class = "presentButton" value = "request">Requests</a>
-				<a href="pref.html" class = "menuButton" value = "preference">Preferences</a>
-				<a href="ratings.html" class = "menuButton" value = "rating">Ratings</a>
+				<a href="requests.php" class = "presentButton" value = "request">Requests</a>
+				<a href="pref.php" class = "menuButton" value = "preference">Preferences</a>
+				<a href="ratings.php" class = "menuButton" value = "rating">Ratings</a>
 			</form>
 		</div>
 	</div>
@@ -40,8 +43,8 @@
 					<h3>Shift Chosen:</h3>
 					<select name="coverTime">
 						<option value ="">Select a Value</option>
-						<option value="0">9am-4pm</option>
-						<option value="1">4pm-11pm</option>
+						<option value="9am-4pm">9am-4pm</option>
+						<option value="4pm-11pm">4pm-11pm</option>
 					</select>
 					<br><br>
 					<input type="submit" id="submitHol" class ="signUp" name="submitHol" value="Submit Request" />
@@ -52,6 +55,11 @@
 	</div>
 	<div class = "tableRow3">
 		<div class = "submitSection">
+		    <form>
+		        <br>
+                <button id="logOut" class="logOutButton" value="Log Out">Log Out</button>
+                <br>
+            </form>
 		</div>
 	</div>
 	<div class = "tableRow4">

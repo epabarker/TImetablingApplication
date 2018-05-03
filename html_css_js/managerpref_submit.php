@@ -1,10 +1,11 @@
 <?php
 /*** begin our session ***/
 session_start();
-
-if(isset($_POST['day']))
+if(!empty($_POST['mday']) && !empty($_POST['seniorNum']) && !empty($_POST['juniorNum']))
 {
-$preferred_day_off = $_POST['day'];
+$preferred_day_off = $_POST['mday'];
+$seniorNum = $_POST['seniorNum'];
+$juniorNum = $_POST['juniorNum'];
 $user_id = $_SESSION['user_id'];
 /*** connect to database ***/
 /*** mysql hostname ***/
@@ -22,12 +23,16 @@ try
     /*** set the error mode to excptions ***/
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     /*** prepare the select statement ***/
-    $stmt = $dbh->prepare("INSERT INTO user_preferences (preferred_day_off, user_id) VALUES(:preferred_day_off, :user_id)");
+    $stmt1 = $dbh->prepare("INSERT INTO manager_preferences (number_senior_staff, number_junior_staff) VALUES(:seniorNum, :juniorNum)");
+    $stmt2 = $dbh->prepare("INSERT INTO user_preferences (preferred_day_off, user_id) VALUES(:preferred_day_off, :user_id)");
     /*** bind the parameters ***/
-    $stmt->bindParam(':preferred_day_off', $preferred_day_off);
-    $stmt->bindParam(':user_id', $user_id);
+    $stmt2->bindParam(':preferred_day_off', $preferred_day_off);
+    $stmt1->bindParam(':seniorNum', $seniorNum);
+    $stmt1->bindParam(':juniorNum', $juniorNum);
+    $stmt2->bindParam(':user_id', $user_id);
     /*** execute the prepared statement ***/
-    $stmt->execute();
+    $stmt1->execute();
+    $stmt2->execute();
     /*** check for a result ***/
 	$message = 'Preferences submitted';
 }
@@ -37,7 +42,7 @@ catch(Exception $e)
     $message = 'We are unable to process your request. Please try again later"';
 }
 }else{
-	$message = 'Please select a day';
+	$message = 'Please enter all the information';
 }
 ?>
 

@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<?php 
+include 'login_test.php';
+?>
+
 <html>
 
 	<head>
@@ -18,10 +21,10 @@
 	</div>
 	<div class = "menuList">
 		<form action="" >
-		<a href="home.html" class = "menuButton" value = "rota">Rota</a>
-				<a href="requests.html" class = "menuButton" value = "request">Requests</a>
-				<a href="pref.html" class = "menuButton" value = "preference">Preferences</a>
-				<a href="ratings.html" class = "presentButton" value = "rating">Ratings</a>
+		<a href="home.php" class = "menuButton" value = "rota">Rota</a>
+				<a href="requests.php" class = "menuButton" value = "request">Requests</a>
+				<a href="pref.php" class = "menuButton" value = "preference">Preferences</a>
+				<a href="ratings.php" class = "presentButton" value = "rating">Ratings</a>
 			<br><br>
 		</form>
 	</div>
@@ -104,10 +107,11 @@
 				</form>
 		</div>
 	</div>
-		<form>
-			<button class="logOutButton" value="Log Out">Log Out</button>
-			<br>
-		</form>	
+	<form>
+	    <br>
+        <button id="logOut" class="logOutButton" value="Log Out">Log Out</button>
+        <br>
+    </form>
 	</div>
 	<div class = "tableRow4">
 		<div class = "tableEnd">
